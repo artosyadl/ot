@@ -1,2 +1,311 @@
-"use strict";function fixedSvg(){var e=window.location.protocol+"//"+window.location.host+window.location.pathname+window.location.search;$("use").filter(function(){return $(this).attr("xlink:href").indexOf("#")>-1}).each(function(){$(this).attr("xlink:href",e+$(this).attr("xlink:href").split("/").slice(-1)[0])})}function isOnPage(e){return!!$(e).length&&$(e)}fixedSvg(),isOnPage(".js-section-home")&&$(".js-section-home").slick({dots:!1,infinite:!0,speed:500,slidesToShow:1,fade:!0,cssEase:"linear",appendArrows:$(".wrap-btn"),prevArrow:'<a class="el-arrow mod-next" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61"><path d="M1 31c0 16.54 13.46 30 30 30s30-13.46 30-30S47.54 1 31 1 1 14.46 1 31zm2.4 0A27.63 27.63 0 0 1 31 3.4 27.63 27.63 0 0 1 58.6 31 27.63 27.63 0 0 1 31 58.6 27.63 27.63 0 0 1 3.4 31z"/><path class="arr__mod" d="M26 31.48c0-.3.12-.6.33-.84l7.8-8.3a1.07 1.07 0 0 1 1.57 0c.43.46.43 1.21 0 1.68l-7 7.46 7 7.46c.43.46.43 1.21 0 1.68-.44.46-1.14.46-1.58 0l-7.79-8.3a1.22 1.22 0 0 1-.32-.84z"/></svg></a>',nextArrow:'<a class="el-arrow mod-prev" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="61" viewBox="0 0 60 61"><path d="M0 31c0 16.54 13.46 30 30 30s30-13.46 30-30S46.54 1 30 1 0 14.46 0 31zm2.4 0A27.63 27.63 0 0 1 30 3.4 27.63 27.63 0 0 1 57.6 31 27.63 27.63 0 0 1 30 58.6 27.63 27.63 0 0 1 2.4 31z"/><path class="arr__mod" d="M34.99 31.48c0-.3-.11-.6-.32-.84l-7.79-8.3a1.07 1.07 0 0 0-1.58 0 1.25 1.25 0 0 0 0 1.68l7 7.46-7 7.46a1.25 1.25 0 0 0 0 1.68c.44.46 1.14.46 1.58 0l7.79-8.3c.21-.23.32-.54.32-.84z"/></svg></a>'}),$(document).on("click",".js_menu",function(e){e.preventDefault(),$(".nav").addClass("open")}),$(document).on("click",".js_close",function(e){e.preventDefault(),$(".nav").removeClass("open"),console.log("----- 1")});
-var validator={init:function(){$("form").each(function(){var e=$(this).attr("name");if(valitatorRules.hasOwnProperty(e)){var r=valitatorRules[e];$(this).validate({rules:r,errorElement:"b",errorClass:"error",focusInvalid:!1,focusCleanup:!1,onfocusout:function(e){validator.defineElement($(e)).valid()},errorPlacement:function(e,r){validator.setError($(r),e)},highlight:function(e,r,s){var i=validator.defineElement($(e)),a=i.closest(".el-field");i&&(i.removeClass(s).addClass(r),a.removeClass("show-check"),i.closest(".ui.dropdown").length&&i.closest(".ui.dropdown").addClass("error"))},unhighlight:function(e,r,s){var i=validator.defineElement($(e)),a=i.closest(".el-field");i&&(i.removeClass(r).addClass(s),a.hasClass("check-valid")&&a.addClass("show-check"),i.closest("el-field").addClass("show-check"),""==i.val()&&i.removeClass("valid"),i.closest(".ui.dropdown").length&&i.closest(".ui.dropdown").removeClass("error"))},messages:{user_email:{required:"Поле обязательное",email:"Неправильный формат E-mail"},user_name:{required:"Поле обязательное",letters:"Неправильный формат имени",minlength:"Не меньше 2 символов"},user_login:{required:"Поле обязательное",email:"Неправильный формат E-mail"},user_password:{required:"Поле обязательное",minlength:"Не менее 6-ти символов"},user_password_confirm:{required:"Вы не подтвердили пароль",minlength:"Не менее 6-ти символов",equalTo:"Пароли должны совпадать"},user_phone:{required:"Поле обязательное",digits:"Неправильный формат номера"}}})}})},setError:function(e,r){(e=this.defineElement(e))&&this.domWorker.error(e,r)},defineElement:function(e){return e},domWorker:{error:function(e,r){"file"==e.attr("type")&&e.parent().addClass("file-error"),e.addClass("error"),e.after(r)}}},valitatorRules={form_one:{user_login:{required:!0,email:!0},user_name:{required:!0,minlength:2},user_email:{required:!0,email:!0},user_phone:{required:!0,digits:!0},user_password:{required:!0,minlength:6},user_password_confirm:{required:!0,minlength:6,equalTo:"#user_password"}}};validator.init();
+'use strict';
+// fixed svg show
+//-----------------------------------------------------------------------------
+function fixedSvg() {
+    var baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname + window.location.search;
+    $('use').filter(function() {
+        return ($(this).attr("xlink:href").indexOf("#") > -1);
+    }).each(function() {
+        $(this).attr("xlink:href", baseUrl + $(this).attr("xlink:href").split('/').slice(-1)[0]);
+    });
+}
+
+fixedSvg();
+
+// checking if element for page
+//-----------------------------------------------------------------------------------
+function isOnPage(selector) {
+    return ($(selector).length) ? $(selector) : false;
+}
+
+if (isOnPage('.js-section-home')){
+    $('.js-section-home').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        fade: true,
+        cssEase: 'linear',
+        appendArrows: $('.wrap-btn'),
+        prevArrow: '<a class="el-arrow mod-next" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 61 61"><path d="M1 31c0 16.54 13.46 30 30 30s30-13.46 30-30S47.54 1 31 1 1 14.46 1 31zm2.4 0A27.63 27.63 0 0 1 31 3.4 27.63 27.63 0 0 1 58.6 31 27.63 27.63 0 0 1 31 58.6 27.63 27.63 0 0 1 3.4 31z"/><path class="arr__mod" d="M26 31.48c0-.3.12-.6.33-.84l7.8-8.3a1.07 1.07 0 0 1 1.57 0c.43.46.43 1.21 0 1.68l-7 7.46 7 7.46c.43.46.43 1.21 0 1.68-.44.46-1.14.46-1.58 0l-7.79-8.3a1.22 1.22 0 0 1-.32-.84z"/></svg></a>',
+        nextArrow: '<a class="el-arrow mod-prev" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="61" viewBox="0 0 60 61"><path d="M0 31c0 16.54 13.46 30 30 30s30-13.46 30-30S46.54 1 30 1 0 14.46 0 31zm2.4 0A27.63 27.63 0 0 1 30 3.4 27.63 27.63 0 0 1 57.6 31 27.63 27.63 0 0 1 30 58.6 27.63 27.63 0 0 1 2.4 31z"/><path class="arr__mod" d="M34.99 31.48c0-.3-.11-.6-.32-.84l-7.79-8.3a1.07 1.07 0 0 0-1.58 0 1.25 1.25 0 0 0 0 1.68l7 7.46-7 7.46a1.25 1.25 0 0 0 0 1.68c.44.46 1.14.46 1.58 0l7.79-8.3c.21-.23.32-.54.32-.84z"/></svg></a>'
+    });
+}
+if (isOnPage('.slider')){
+    $('.slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        fade: true,
+        cssEase: 'linear',
+        appendArrows: $('.wrap-btn'),
+        prevArrow: '<a class="el-arrow mod-next" href="#"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 19" style="enable-background:new 0 0 10 19;" xml:space="preserve"><path d="M0,9.5c0,0.3,0.1,0.6,0.3,0.8l7.8,8.3c0.4,0.4,1.1,0.5,1.5,0.1c0,0,0,0,0.1-0.1c0.4-0.5,0.4-1.2,0-1.7l-7-7.5 l7-7.5c0.4-0.5,0.4-1.2,0-1.7c-0.4-0.5-1.1-0.5-1.6,0L0.3,8.6C0.1,8.9,0,9.2,0,9.5z"/></svg></a>',
+        nextArrow: '<a class="el-arrow mod-prev" href="#"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 10 19" style="enable-background:new 0 0 10 19;" xml:space="preserve"><path d="M10,9.5c0-0.3-0.1-0.6-0.3-0.8L1.9,0.3C1.5-0.1,0.8-0.1,0.4,0.3c0,0,0,0-0.1,0.1c-0.4,0.5-0.4,1.2,0,1.7l7,7.5 l-7,7.5c-0.4,0.5-0.4,1.2,0,1.7c0.4,0.5,1.1,0.5,1.6,0l7.8-8.3C9.9,10.1,10,9.8,10,9.5z"/></svg></a>'
+    });
+}
+if (isOnPage('.item-color')){
+    $(document).on('click', '.item-color', function (e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+
+}
+
+
+
+$(document).on('click', '.js_menu', function (e) {
+    e.preventDefault();
+    $('.nav').addClass('open');
+});
+
+$(document).on('click', '.js_close', function (e) {
+    e.preventDefault();
+    $('.nav').removeClass('open');
+});
+
+$(document).on('click', '.sort-btn', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('active');
+});
+
+// $(document).on('click', '.product__item .title', function (e) {
+//     e.preventDefault();
+//     $(this).parents('.product__item').toggleClass('open');
+// });
+
+$(document).on('click', '.product__item .arrow', function (e) {
+    e.preventDefault();
+    $(this).parents('.product__item').toggleClass('open');
+});
+
+var entries = [
+    { label: 'Керосин', url: '#', target: '_top' },
+    { label: 'Ксилол', url: '#', target: '_top' },
+    { label: 'Уайт спирит', url: '#', target: '_top' },
+    { label: 'Бутилацетат', url: '#', target: '_top' },
+    { label: 'Толуол', url: '#', target: '_top' },
+    { label: 'Сольвент', url: '#', target: '_top' },
+    { label: 'Ацетон', url: '#', target: '_top' },
+    { label: 'Нефрас', url: '#', target: '_top' },
+    { label: 'Этилацетат', url: '#', target: '_top' },
+    { label: 'Изопропиловый спирт', url: '#', target: '_top' },
+    { label: 'Растворитель 646', url: '#', target: '_top' },
+    { label: 'Растворитель Р 4', url: '#', target: '_top' },
+    { label: 'Растворитель Р 5', url: '#', target: '_top' },
+    { label: 'грунтовка гф-021', url: '#', target: '_top' },
+    { label: 'Водоэмульсионные краски', url: '#', target: '_top' },
+    { label: 'Эмаль НЦ-132', url: '#', target: '_top' },
+    { label: 'Грунт-эмаль по ржавчине 3 в 1', url: '#', target: '_top' },
+    { label: 'Ортоксилол', url: '#', target: '_top' }
+];
+
+var settings = {
+    entries: entries,
+    width: 740,
+    height: 500,
+    radius: '75%',
+    radiusMin: 75,
+    bgDraw: true,
+    bgColor: 'rgba(0,0,0,0)',
+    opacityOver: 1.00,
+    opacityOut: 0.05,
+    opacitySpeed: 6,
+    fov: 800,
+    speed: 1,
+    fontColor: '#fff',
+    fontWeight: 'normal',//bold
+    fontStyle: 'normal',//italic
+    fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+    fontToUpperCase: true
+};
+
+//var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+$( '#tag-cloud' ).svg3DTagCloud( settings );
+
+
+function init_map1() {
+    var myOptions = {
+        zoom: 12,
+        center: new google.maps.LatLng(40.580247, -35.817628),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById('maps'), myOptions);
+    var marker = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(56.8777961, 60.53783659999999)
+    });
+    var infowindow = new google.maps.InfoWindow({content: '<strong>Маневровая, 35</strong><br><br> <br>'});
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+    });
+    infowindow.open(map, marker);
+}
+
+google.maps.event.addDomListener(window, 'load', init_map1());
+
+
+$(document).on('opening', '.modal-map', function () {
+    // console.log('Modal is opening');
+
+    setTimeout(function () {
+        init_map1();
+        // console.log('----- ' + 111);
+    }, 100);
+    
+});
+// custom jQuery validation
+//-----------------------------------------------------------------------------------
+var validator = {
+    init: function() {
+        $('form').each(function() {
+            var name = $(this).attr('name');
+            if (valitatorRules.hasOwnProperty(name)) {
+                var rules = valitatorRules[name];
+                $(this).validate({
+                    rules: rules,
+                    errorElement: 'b',
+                    errorClass: 'error',
+                    focusInvalid: false,
+                    focusCleanup: false,
+                    onfocusout: function(element) {
+                        var $el = validator.defineElement($(element));
+                        $el.valid();
+                    },
+                    errorPlacement: function(error, element) {
+                        validator.setError($(element), error);
+                    },
+                    highlight: function(element, errorClass, validClass) {
+                        var $el = validator.defineElement($(element)),
+                            $elWrap = $el.closest('.el-field');
+                        if ($el) {
+                            $el.removeClass(validClass).addClass(errorClass);
+                            $elWrap.removeClass('show-check');
+                            if ($el.closest('.ui.dropdown').length) {
+                                $el.closest('.ui.dropdown').addClass('error');
+                            }
+                        }
+                    },
+                    unhighlight: function(element, errorClass, validClass) {
+                        var $el = validator.defineElement($(element)),
+                            $elWrap = $el.closest('.el-field');
+                        if ($el) {
+                            $el.removeClass(errorClass).addClass(validClass);
+                            if ($elWrap.hasClass('check-valid')) {
+                                $elWrap.addClass('show-check');
+                            }
+                            $el.closest('el-field').addClass('show-check');
+                            if ($el.val() == '') {
+                                $el.removeClass('valid');
+                            }
+                            if ($el.closest('.ui.dropdown').length) {
+                                $el.closest('.ui.dropdown').removeClass('error');
+                            }
+                        }
+                    },
+                    messages: {
+                        'user_email': {
+                            required: 'Поле обязательное',
+                            email: 'Неправильный формат E-mail'
+                        },
+                        'user_name': {
+                            required: 'Поле обязательное',
+                            letters: 'Неправильный формат имени',
+                            minlength: 'Не меньше 2 символов'
+                        },
+                        'user_login': {
+                            required: 'Поле обязательное',
+                            email: 'Неправильный формат E-mail'
+                        },
+                        'user_password': {
+                            required: 'Поле обязательное',
+                            minlength: 'Не менее 6-ти символов'
+                        },
+                        'user_password_confirm': {
+                            required: 'Вы не подтвердили пароль',
+                            minlength: 'Не менее 6-ти символов',
+                            equalTo: 'Пароли должны совпадать'
+                        },
+                        'user_phone': {
+                            required: 'Поле обязательное',
+                            digits: 'Неправильный формат номера'
+                        }
+                    }
+                });
+            }
+        });
+    },
+    setError: function($el, message) {
+        $el = this.defineElement($el);
+        if ($el) this.domWorker.error($el, message);
+    },
+    defineElement: function($el) {
+        return $el;
+    },
+    domWorker: {
+        error: function($el, message) {
+            if ($el.attr('type') == 'file') $el.parent().addClass('file-error');
+            $el.addClass('error');
+            $el.after(message);
+        }
+    }
+};
+
+
+// rule for form namespace
+//-----------------------------------------------------------------------------------
+var valitatorRules = {
+    'form_one': {
+        'user_login': {
+            required: true,
+            email: true
+        },
+        'user_name': {
+            required: true,
+            minlength: 2
+        },
+        'user_email': {
+            required: true,
+            email: true
+        },
+        'user_phone': {
+            required: true,
+            digits: true
+        },
+        'user_password': {
+            required: true,
+            minlength: 6
+        },
+        'user_password_confirm': {
+            required: true,
+            minlength: 6,
+            equalTo: "#user_password"
+        }
+    }
+
+};
+
+// custom rules
+//-----------------------------------------------------------------------------------
+// $.validator.addMethod("email", function(value) {
+//     if (value == '') return true;
+//     var regexp = /[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+//     return regexp.test(value);
+// });
+//
+// $.validator.addMethod("letters", function(value, element) {
+//     return this.optional(element) || /^[^1-9!@#\$%\^&\*\(\)\[\]:;,.?=+_<>`~\\\/"]+$/i.test(value);
+// });
+//
+// $.validator.addMethod("digits", function(value, element) {
+//     return this.optional(element) || /^(\+?\d+)?\s*(\(\d+\))?[\s-]*([\d-]*)$/i.test(value);
+// });
+//
+// $.validator.addMethod("valueNotEquals", function(value, element) {
+//     if (value == "") return false
+//     else return true
+// });
+
+//  validator init
+//-----------------------------------------------------------------------------------
+validator.init();

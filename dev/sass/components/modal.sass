@@ -1,0 +1,129 @@
+.remodal.modal-tell
+  background: url(../images/modal-bg.png) no-repeat center/cover
+  max-width: 645px
+
+  @media (max-width: $screen-xs-max)
+    background: white
+    max-width: 400px
+
+
+
+.remodal.modal-map
+  max-width: 950px
+  padding: 0
+
+  h2
+    text-align: left
+    padding: 20px 30px
+    color: #383838
+    font-family: $open
+    font-size: 13px
+    font-weight: 400
+    line-height: 16px
+  #maps
+    width: 100%
+    height: 400px
+    background-color: #cccccc
+
+.form-coll
+  padding-right: 240px
+  @media (max-width: $screen-xs-max)
+    padding-right: 0
+
+  form
+    margin-top: 20px
+
+  button
+    border-radius: 4px
+    background-color: $grean
+    width: 162px
+    height: 40px
+    padding: 0
+    margin-top: 30px
+    text-align: center
+
+  h2
+    color: #272727
+    font-family: $open
+    font-size: 24px
+    font-weight: 700
+    max-width: 325px
+
+  input
+    font-family: $open
+    font-size: 14px
+    font-weight: 600
+    line-height: 38px
+    color: #2a2a2a
+    border: none
+    box-shadow: none
+    padding-left: 6px
+    width: 100%
+    background: none
+    border-bottom: 1px solid #373737
+    margin-bottom: 10px
+    max-width: 325px
+
+  p
+    max-width: 325px
+    color: #272727
+    font-family: $open
+    font-size: 14px
+    font-weight: 300
+    line-height: 29px
+
+
+.remodal.modal-color
+  padding-top: 10px
+  max-width: 640px
+  text-align: center
+
+  h2
+    color: #272727
+    font-family: $open
+    font-size: 24px
+    font-weight: 700
+    text-transform: none
+
+  .wrap-color
+    margin-top: 15px
+    display: inline-block
+    height: 220px
+    overflow: auto
+    width: 100%
+    max-width: 520px
+    padding-left: 50px
+    @media (max-width: 610px)
+      padding-left: 20px
+
+  .item-color
+    width: 100%
+    max-width: 170px
+    text-align: left
+    display: inline-block
+    color: #2b2f3e
+    font-family: $open
+    font-size: 14px
+    font-weight: 400
+    line-height: 43px
+    text-transform: uppercase
+    cursor: pointer
+    &.active span:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      display: inline-block
+      background: url(../images/check.svg) no-repeat center
+
+    span
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      width: 20px
+      height: 20px
+      border-radius: 100%
+      box-sizing: border-box
+      margin-right: 16px

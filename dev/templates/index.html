@@ -2,20 +2,13 @@
 </head>
 
 <body>
-  <!-- Begin svg -->
-  <include src="../chunks/svg.html"></include>
-  <!-- End svg -->
   <div id="page-wrapper" class="page-wrapper">
 
-    <!-- Begin header -->
     <include src="../chunks/header.html"></include>
-    <!-- End header -->
-
-    <!-- Begin page body -->
     <div id="page-body" class="page-body">
       <div class="section-home">
         <div class="js-section-home">
-        <div class="item__slider" style="background-image: url(../images/bg-home.png);">
+        <div class="item__slider" style="background-image: url(images/bg-home.png);">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -27,7 +20,7 @@
             </div>
           </div>
         </div>
-        <div class="item__slider" style="background-image: url(../images/bg-home.png);">
+        <div class="item__slider" style="background-image: url(images/bg-home.png);">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
@@ -45,22 +38,8 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <ul class="tags">
-                <li><a href="#">Керосин</a></li>
-                <li><a href="#">Ксилол</a></li>
-                <li><a href="#">Уайт спирит Бутилацетат</a>
-                <li><a href="#">Толуол Сольвент Ацетон</a></li>
-                <li><a href="#">Нефрас Этилацетат</a></li>
-                <li><a href="#">Изопропиловый спирт</a></li>
-                <li><a href="#">Растворитель 646</a></li>
-                <li><a href="#">Растворитель Р 4</a></li>
-                <li><a href="#">Растворитель Р 5</a></li>
-                <li><a href="#">грунтовка гф-021</a></li>
-                <li><a href="#">Водоэмульсионные краски</a></li>
-                <li><a href="#">Эмаль НЦ-132</a></li>
-                <li><a href="#">Грунт-эмаль по ржавчине 3 в 1</a></li>
-                <li><a href="#">Ортоксилол</a></li>
-              </ul>
+              <div class="tags" id="tag-cloud"></div>
+
             </div>
           </div>
         </div>
@@ -79,7 +58,7 @@
                 <div class="text">
                   <div class="title">лакокрасочные материалы</div>
                   <div class="desc">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</div>
-                  <a href="#" class="link">Подробнее</a>
+                  <a href="production.html" class="link">Подробнее</a>
                 </div>
               </div>
             </div>
@@ -91,7 +70,7 @@
                 <div class="text">
                   <div class="title">РАСТВОРИТЕЛИ</div>
                   <div class="desc">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</div>
-                  <a href="#" class="link">Подробнее</a>
+                  <a href="production.html" class="link">Подробнее</a>
                 </div>
               </div>
             </div>
@@ -103,7 +82,7 @@
                 <div class="text">
                   <div class="title">Водоэмульсион-ные краски</div>
                   <div class="desc">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.</div>
-                  <a href="#" class="link">Подробнее</a>
+                  <a href="production.html" class="link">Подробнее</a>
                 </div>
               </div>
             </div>
@@ -119,17 +98,10 @@
         </div>
       </div>
     </div>
-    <!-- End page body -->
-
-    <!-- Begin footer -->
     <include src="../chunks/footer.html"></include>
-    <!-- End footer -->
-
+    <include src="../chunks/modal.html"></include>
   </div>
-
-  <!-- Begin script -->
   <include src="../chunks/scripts.html"></include>
-  <!-- End script -->
 </body>
 
 </html>

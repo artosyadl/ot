@@ -1,0 +1,141 @@
+.form-wrap
+  padding: 60px 0 90px
+  background: #f7f7f7 url(../images/bg-contact.jpg) no-repeat center/cover
+  @media (max-width: $screen-xs-max)
+    background: #f7f7f7
+
+  .title_page
+    line-height: 40px
+    margin-bottom: 10px
+
+  p
+    color: #000000
+    font-family: $open
+    font-size: 14px
+    font-weight: 300
+    line-height: 21px
+
+  .el-btn
+    border-radius: 42px
+    margin-top: 20px
+  form
+    max-width: 350px
+    margin-top: 20px
+  input
+    font-family: $open
+    font-size: 14px
+    font-weight: 600
+    line-height: 38px
+    color: #2a2a2a
+    border: none
+    box-shadow: none
+    padding-left: 6px
+    width: 100%
+    background: none
+    border-bottom: 1px solid #373737
+    margin-bottom: 10px
+
+.map-wrap
+  padding: 70px 0 80px
+  background-color: white
+
+  .btn-download
+    display: inline-block
+    height: 50px
+    border: 1px solid #81b73b
+    border-radius: 50px
+    line-height: 48px
+    padding-left: 26px
+    padding-right: 6px
+    background-color: rgba(109, 178, 61, 0)
+    &:hover
+      text-decoration: none
+      span
+        opacity: 0.9
+    span
+      margin-left: 40px
+      display: inline-block
+      border-radius: 38px
+      width: 122px
+      height: 38px
+      border: 1px solid #81b73b
+      background-color: $grean
+      color: #ffffff
+      font-family: $open
+      font-size: 11px
+      font-weight: 600
+      line-height: 36px
+      padding-left: 22px
+      box-sizing: border-box
+      text-transform: uppercase
+      position: relative
+      &:after
+        position: absolute
+        right: 16px
+        top: 8px
+        content: ''
+        width: 19px
+        height: 19px
+        display: inline-block
+        background: url(../images/download-1.png) no-repeat center
+
+  .item-address
+    border: 1px solid rgba(0, 0, 0, 0.15)
+    background-color: #ffffff
+    margin-bottom: 30px
+    #gmap_canvas
+      width: 100%
+      height: 345px
+      background-color: #f7f7f7
+
+    .title
+      padding-left: 44px
+      position: relative
+      color: #353e49
+      font-family: $open
+      font-size: 18px
+      font-weight: 700
+      line-height: 28px
+      padding-top: 25px
+      padding-bottom: 25px
+      padding-right: 15px
+      margin-left: 35px
+      &:before
+        position: absolute
+        left: 0
+        top: 50%
+        margin-top: -16px
+        content: ''
+        height: 33px
+        width: 33px
+        background: url(../images/marck-1.png) no-repeat center
+
+    p
+      color: #000000
+      font-family: $open
+      font-size: 14px
+      font-weight: 400
+      line-height: 25px
+      margin-left: 35px
+      margin-right: 15px
+      a
+        display: inline-block
+        position: relative
+        color: $grean
+        font-family: $open
+        font-size: 14px
+        font-weight: 600
+        line-height: 28px
+        text-decoration: underline
+        margin-bottom: 25px
+        padding-right: 36px
+        &:before
+          position: absolute
+          right: 0
+          top: 50%
+          margin-top: -11px
+          content: ''
+          height: 22px
+          width: 22px
+          background: url(../images/plus-circle.png) no-repeat center
+

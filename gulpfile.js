@@ -85,7 +85,7 @@ gulp.task('sass', function() {
 gulp.task('js-libs', function() {
     return gulp.src([paths.jsDev + 'jquery-2.2.4.min.js', paths.jsDev + 'lib/*.js'])
         .pipe(jshint())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(concat('libs.js'))
         .pipe(gulp.dest(paths.js))
         .pipe(browserSync.stream());
@@ -94,7 +94,7 @@ gulp.task('js-libs', function() {
 gulp.task('js-core', function() {
     return gulp.src(paths.jsDev + 'core/*.js')
         .pipe(jshint())
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(concat('core.js'))
         .pipe(gulp.dest(paths.js))
         .pipe(browserSync.stream());

@@ -1,0 +1,152 @@
+// detail__wrapper
+//-----------------------------------------------------------------------------------
+.detail__wrapper
+  padding-top: 55px
+  background-color: #f7f7f8
+  .slider-wrapper
+    display: inline-block
+    width: 100%
+    max-width: 385px
+    position: relative
+    height: 415px
+    background-color: white
+    margin-bottom: 40px
+    .slick-list, .slick-track, .slick-slide
+      height: 100%
+    .wrap-btn
+      position: absolute
+      right: 0px
+      bottom: 0px
+      text-align: right
+      .el-arrow
+        display: inline-block !important
+        margin-left: 3px
+        line-height: 58px
+        text-align: center
+        width: 50px
+        height: 50px
+        border: 1px solid $grean
+        transition: all 0.2s
+        &:hover
+          color: white
+          background-color: $grean
+          svg
+            fill: white
+        svg
+          width: 12px
+          height: 20px
+          display: inline-block
+          fill: $grean
+  .slider
+    width: 100%
+    height: 100%
+    background-color: white
+
+    .img
+      @extend %vafix
+      height: 100%
+      text-align: center
+      img
+        vertical-align: middle
+        display: inline-block
+  .name
+    color: #000000
+    font-family: $open
+    font-size: 16px
+    font-weight: 700
+    line-height: 23px
+    text-transform: uppercase
+    margin-bottom: 30px
+
+  .label-detail
+    color: #000000
+    font-family: $open
+    font-size: 14px
+    font-weight: 700
+    line-height: 25px
+
+
+  .list-props
+    padding-bottom: 30px
+    margin-bottom: 30px
+    border-bottom: 1px solid #e8e8e8
+    li
+      color: #000000
+      font-size: 14px
+      font-weight: 300
+      line-height: 25px
+      font-family: $open
+
+    .wrap
+      position: relative
+      .el-btn
+        float: right
+        margin-top: -44px
+        @media (max-width: $screen-xs-max)
+          margin-top: 10px
+          float: none
+
+  .color
+    padding-bottom: 30px
+    margin-bottom: 30px
+    border-bottom: 1px solid #e8e8e8
+    .label-detail
+      margin-bottom: 20px
+    a
+      color: #000000
+      font-family: $open
+      font-size: 11px
+      font-weight: 400
+      line-height: 12px
+      text-transform: uppercase
+      padding: 10px 25px
+      display: inline-block
+      margin-right: 10px
+      border-radius: 5px
+      background-color: #ffffff
+      transition: all 0.2s
+      &:hover
+        text-decoration: none
+        background-color: $grean
+        color: white
+  .fas
+    .label-detail
+      margin-right: 10px
+      margin-bottom: 20px
+      display: inline-block
+    select
+      padding: 0px 25px
+      display: inline-block
+      height: 32px
+      width: 170px
+      background-color: white
+      border: 1px solid rgba(16, 16, 17, 0.2)
+      color: #000000
+      font-family: $open
+      font-size: 12px
+      font-weight: 400
+      line-height: 32px
+  .desc
+    .label-detail
+      margin-bottom: 24px
+    p
+      color: #000000
+      font-family: $open
+      font-size: 13px
+      font-weight: 300
+      line-height: 25px
+      margin-bottom: 24px
+
+  .delivery
+    margin: 50px 0
+    display: inline-block
+    padding: 20px 30px
+    border: 1px dashed $grean
+    font-family: $open
+    font-size: 10px
+    font-weight: 600
+    line-height: 18px
+    text-transform: uppercase
+    color: #616161
+    span
+      color: $grean

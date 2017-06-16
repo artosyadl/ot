@@ -1,0 +1,169 @@
+// news__wrapper
+//-----------------------------------------------------------------------------------
+.news__wrapper
+  padding-top: 55px
+  padding-bottom: 60px
+  background-color: #f7f7f8
+
+  .sidebar__wrapper
+    margin-top: 60px
+    position: relative
+    width: 100%
+    padding-right: 280px
+    min-height: 610px
+    @media (max-width: $screen-sm-max)
+      padding-right: 15px
+
+    .right-sidebar
+      position: absolute
+      right: 15px
+      top: 30px
+      @media (max-width: $screen-sm-max)
+        position: static
+        width: 100%
+        margin-bottom: 30px
+
+
+.news__content
+  @extend %clear-fix
+  width: 100%
+  box-sizing: border-box
+  padding-right: 40px
+  @media (max-width: $screen-sm-max)
+    padding-right: 0
+    margin-bottom: 50px
+
+.news__item
+  width: 100%
+  box-sizing: border-box
+  padding-left: 320px
+  position: relative
+  padding-top: 28px
+  margin-bottom: 50px
+  @media (max-width: $screen-xs-max)
+    padding-top: 220px
+    padding-left: 0
+  &:last-child
+    margin-bottom: 0
+  .data
+    padding-top: 8px
+    box-sizing: border-box
+    position: absolute
+    top: 7px
+    z-index: 2
+    pointer-events: none
+    left: 7px
+    width: 43px
+    height: 43px
+    text-align: center
+    background-color: #8bc53f
+    color: #ffffff
+    font-family: $open
+    font-size: 12px
+    font-weight: 400
+    line-height: 13px
+    &:before
+      content: ''
+      width: 43px
+      height: 43px
+      border: 2px solid #8bc53f
+      display: inline-block
+      position: absolute
+      left: -7px
+      top: -7px
+      z-index: -1
+      box-sizing: border-box
+
+  .wrap-img
+    overflow: hidden
+    position: absolute
+    width: 100%
+    max-width: 270px
+    height: 180px
+    left: 28px
+    top: 28px
+    @media (max-width: 340px)
+      max-width: 260px
+
+  .img
+    position: relative
+    width: 100%
+    height: 100%
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+
+    & > img
+      display: none
+
+  .bottom-list
+    @extend %clear-fix
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 30px
+    background-color: rgba(#8bc34a, 0.85)
+    padding: 0 30px 0 20px
+    box-sizing: border-box
+  .user
+    display: inline-block
+    color: #eeeeee
+    font-family: $open
+    font-size: 12px
+    font-weight: 300
+    line-height: 13px
+    position: relative
+    box-sizing: border-box
+    padding-left: 22px
+    margin-top: 7px
+    &:before
+      position: absolute
+      left: 0
+      top: 0
+      content: ''
+      width: 10px
+      height: 11px
+      display: inline-block
+      background: url(../images/user.png) no-repeat center
+  .social
+    display: inline-block
+    @extend %clear-fix
+    float: right
+    margin-top: 6px
+    li
+      float: left
+      margin-right: 22px
+      &:last-child
+        margin-right: 0
+    a
+      display: inline-block
+      &:hover
+        opacity: 0.8
+  .text
+    @media (max-width: $screen-xs-max)
+      padding-left: 28px
+  .name
+    color: #1f2b34
+    font-family: $open
+    font-size: 11px
+    font-weight: 700
+    line-height: 25px
+    text-transform: uppercase
+    margin-bottom: 25px
+  .desc
+    color: #1f2b34
+    font-family: $open
+    font-size: 12px
+    font-weight: 300
+    line-height: 21px
+    margin-bottom: 25px
+    overflow: hidden
+    max-height: 82px
+
+  .link
+    color: #64ae30
+    font-family: $open
+    font-size: 14px
+    font-weight: 400
+    line-height: 25px

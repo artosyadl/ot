@@ -57,40 +57,14 @@
         fill-opacity: 1
 
 .section-tags
-  padding: 50px 0
+  padding: 0
 
   .tags
     @extend %clear-fix
-    li
-      float: left
-
-      &:nth-child(2) a
-        font-size: 16px
-      &:nth-child(3) a
-        font-size: 22px
-      &:nth-child(4) a
-        font-size: 29px
-      &:nth-child(5) a
-        font-size: 12px
-      &:nth-child(6) a
-        font-size: 20px
-      &:nth-child(7) a
-        font-size: 24px
-      &:nth-child(8) a
-        font-size: 23px
-      &:nth-child(9) a
-        font-size: 31px
-      &:nth-child(10) a
-        font-size: 13px
-      &:nth-child(11) a
-        font-size: 27px
-      &:nth-child(12) a
-        font-size: 23px
-      &:nth-child(13) a
-        font-size: 16px
-      &:nth-child(14) a
-        font-size: 20px
-
+    margin: 0 -10px
+    text-align: center
+    svg
+      display: inline-block
     a
       padding: 0 10px
       display: inline-block
@@ -103,6 +77,32 @@
       &:hover
         opacity: 0.7
         text-decoration: none
+      &:nth-child(2)
+        font-size: 16px
+      &:nth-child(3)
+        font-size: 22px
+      &:nth-child(4)
+        font-size: 29px
+      &:nth-child(5)
+        font-size: 12px
+      &:nth-child(6)
+        font-size: 20px
+      &:nth-child(7)
+        font-size: 24px
+      &:nth-child(8)
+        font-size: 23px
+      &:nth-child(9)
+        font-size: 31px
+      &:nth-child(10)
+        font-size: 13px
+      &:nth-child(11)
+        font-size: 27px
+      &:nth-child(12)
+        font-size: 23px
+      &:nth-child(13)
+        font-size: 16px
+      &:nth-child(14)
+        font-size: 20px
 
 
 .section-aur-product
@@ -122,7 +122,7 @@
 
   .container-custom
     width: 100%
-    max-width: 1100px
+    max-width: 970px
     margin: 0 auto
     padding: 0 15px
     box-sizing: border-box
@@ -130,8 +130,8 @@
 .item__product
   @extend %clear-fix
   position: relative
-  padding-left: 100px
-  padding-right: 40px
+  padding-left: 90px
+  padding-right: 30px
   min-height: 215px
   line-height: 215px
   width: calc(100% + 15px)
@@ -139,15 +139,55 @@
   box-sizing: border-box
   border: 1px solid rgba(0, 0, 0, 0.15)
   background-color: #ffffff
+  transition: all 0.2s
   @media (max-width: $screen-sm-max)
     margin-bottom: 15px
 
+  &.mod-1
+    margin-bottom: 20px
+    padding-left: 120px
+    @media (max-width: $screen-xs-max)
+      padding-left: 90px
+    .img
+      width: 100px
+      top: 64px
+      @media (max-width: $screen-xs-max)
+        width: 70px
+
+    .text
+      @media (max-width: $screen-xs-max)
+        padding: 30px 0
+    .title
+      text-align: center
+      font-size: 22px
+      font-weight: 700
+      line-height: 30px
+      @media (max-width: $screen-xs-max)
+        text-align: left
+    .desc
+      font-size: 14px
+      line-height: 24px
+      @media (max-width: $screen-xs-max)
+        font-size: 12px
+        line-height: 20px
+    .link
+      font-size: 14px
+      line-height: 24px
+      @media (max-width: $screen-xs-max)
+        font-size: 12px
+        line-height: 20px
+
+  &:hover
+    cursor: pointer
+    box-shadow: 5px 7px 21px rgba(0, 0, 0, 0.08)
+    background-color: #f7f7f7
+
   .img
-    width: 90px
+    width: 70px
     position: absolute
-    left: 5px
+    left: 10px
     top: 46px
-    height: 90px
+    height: 70px
     text-align: center
 
   .text
@@ -159,25 +199,26 @@
   .title
     font-family: $open
     color: #424242
-    font-size: 22px
+    font-size: 19px
     font-weight: 700
     line-height: 29px
     text-transform: uppercase
-    margin-bottom: 20px
+    margin-bottom: 15px
     @media (max-width: $screen-md-max)
       font-size: 19px
 
   .desc
     font-family: $open
     color: #424242
-    font-size: 14px
+    font-size: 12px
     font-weight: 400
     line-height: 20px
     margin-bottom: 5px
+
   .link
     font-family: $open
     color: $grean
-    font-size: 14px
+    font-size: 12px
     font-weight: 600
     line-height: 27px
     text-decoration: underline

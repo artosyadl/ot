@@ -7,6 +7,7 @@
   display: inline-block
   border-radius: 4px
   background-color: $grean
+  border: 1px solid $grean
   padding: 14px 35px
   color: #ffffff
   font-family: $open
@@ -17,7 +18,8 @@
   transition: all 0.2s
   &:hover
     text-decoration: none
-    opacity: 0.9
+    background: none
+    color: $grean
 
 h2
   color: #000000
@@ -29,6 +31,14 @@ h2
   @media (max-width: $screen-xs-max)
     font-size: 24px
     line-height: 30px
+
+.title_page
+  color: #191818
+  font-family: $open
+  font-size: 24px
+  font-weight: 700
+  line-height: 52px
+  text-transform: uppercase
 
 .steps
   @extend %clear-fix
@@ -78,3 +88,344 @@ h2
     font-family: $open
     font-size: 14px
     font-weight: 700
+
+
+// breadcrumbs
+//-----------------------------------------------------------------------------------
+.breadcrumbs
+  background-color: white
+  line-height: 64px
+  ul
+    @extend %clear-fix
+    font-size: 0
+  li
+    position: relative
+    display: inline-block
+    margin-right: 40px
+    float: left
+    line-height: 64px
+    height: 64px
+    &:first-child a
+      padding-left: 38px
+    &:last-child
+      margin-right: 0
+      &:after
+        display: none
+    &:after
+      content: ''
+      width: 1px
+      height: 14px
+      position: absolute
+      background-color: #433e3e
+      right: -20px
+      top: 25px
+  img
+    position: absolute
+    left: 0
+    top: 21px
+
+  a, span
+    font-family: $open
+    font-size: 14px
+    font-weight: 300
+  a
+    color: #433e3e
+  span
+    color: #cacaca
+
+// pagination
+//-----------------------------------------------------------------------------------
+.pagination
+  @extend %clear-fix
+  background-color: #f7f7f8
+  padding: 60px 0
+  @media (max-width: $screen-xs-max)
+    padding: 0
+  .wrap__pagination
+    @extend %clear-fix
+    display: inline-block
+  ul
+    float: left
+    @extend %clear-fix
+    li
+      float: left
+      margin-right: 25px
+      &:last-child
+        @media (max-width: $screen-xs-max)
+          margin-right: 10px
+  a:hover
+    text-decoration: underline
+    color: $grean
+  a, span
+    text-align: center
+    font-family: $open
+    font-size: 14px
+    font-weight: 400
+    line-height: 27px
+    color: #424c55
+    display: inline-block
+
+  span
+    width: 27px
+    height: 27px
+    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.09)
+    background-color: #ffffff
+
+  .prev
+    float: left
+    margin-right: 25px
+    @media (max-width: $screen-xs-max)
+      text-overflow: ellipsis
+      display: inline-block
+      white-space: nowrap
+      overflow: hidden
+      width: 50px
+      margin-right: 10px
+  .next
+    float: left
+    @media (max-width: $screen-xs-max)
+      text-overflow: ellipsis
+      display: inline-block
+      white-space: nowrap
+      overflow: hidden
+      width: 50px
+
+// sort
+//-----------------------------------------------------------------------------------
+.sort
+  background-color: #f7f7f8
+  padding-top: 15px
+  .line
+    width: 100%
+    padding-bottom: 15px
+    border-bottom: 1px solid rgba(black, 0.11)
+
+  .sort-btn
+    display: inline-block
+    position: relative
+    box-sizing: border-box
+    padding-right: 20px
+    margin-right: 20px
+    &:active
+      &:after
+        transform: rotate(180deg)
+
+    &:after
+      position: absolute
+      display: inline-block
+      content: ""
+      right: 0
+      top: 5px
+      width: 8px
+      height: 5px
+      transform: rotate(0deg)
+      background: url(../images/romb.svg) no-repeat center
+
+  .sort__search
+    position: relative
+    display: inline-block
+
+    input
+      width: 188px
+      padding: 6px 30px 8px 15px
+      color: #000
+      border-radius: 32px
+      background-color: #fff
+      font-family: $open
+      font-size: 14px
+      font-weight: 400
+      border: none
+      box-shadow: none
+      @media (max-width: $screen-xs-max)
+        width: 100px
+
+    button
+      position: absolute
+      top: 10px
+      right: 10px
+// popular__tovar
+//-----------------------------------------------------------------------------------
+.popular__tovar
+  padding-left: 32px
+  padding-top: 28px
+  h3
+    color: #555555
+    font-family: $open
+    font-size: 13px
+    font-weight: 600
+    line-height: 24px
+    text-transform: uppercase
+
+.top__tovar
+  padding: 26px 0
+
+.top__tovar__item
+  text-align: center
+  width: 214px
+  box-shadow: 3px 4px 13px rgba(0, 0, 0, 0.05)
+  border: 3px solid #ffffff
+  padding: 0 11px 18px
+  box-sizing: border-box
+  background-color: #ffffff
+  transition: all 0.2s
+  border-radius: 3px
+  margin-bottom: 13px
+  &:last-child
+    margin-bottom: 0
+  &:hover
+    border-color: $grean
+  .wrap__img
+    height: 105px
+    margin: 13px auto
+
+    img
+      max-height: 100%
+
+  .name
+    text-align: left
+    color: #000000
+    font-family: $open
+    font-size: 11px
+    font-weight: 700
+    line-height: 23px
+    text-transform: uppercase
+    margin-bottom: 5px
+
+  .desc
+    text-align: left
+    color: #000000
+    font-family: $open
+    font-size: 12px
+    font-weight: 300
+    line-height: 19px
+    margin-bottom: 18px
+
+  .btn__price
+    display: inline-block
+    color: #000000
+    font-family: $open
+    font-size: 11px
+    font-weight: 400
+    line-height: 36px
+    text-transform: uppercase
+    width: 149px
+    height: 38px
+    text-align: center
+    border-radius: 3px
+    box-sizing: border-box
+    border: 1px solid rgba(109, 178, 61, 0.81)
+    background-color: rgba(109, 178, 61, 0)
+    transition: all 0.2s
+    &:hover
+      background-color: $grean
+      color: white
+      text-decoration: none
+
+.right-sidebar
+  background-color: #f7f7f8
+  width: 265px
+
+  .search__sidebar
+    position: relative
+    display: inline-block
+    width: 100%
+
+    input
+      width: 100%
+      height: 42px
+      box-shadow: 5px 7px 13px rgba(0, 0, 0, 0.13)
+      background-color: #ffffff
+      padding: 7px 45px 9px 15px
+      color: #3c4852
+      font-family: $open
+      border: none
+      font-size: 14px
+      font-weight: 400
+      line-height: 25px
+      box-sizing: border-box
+
+    button
+      position: absolute
+      top: 14px
+      right: 20px
+
+  .sm__tags
+    margin-bottom: 55px
+    h4
+      color: #1f2b34
+      font-family: $open
+      font-size: 11px
+      font-weight: 700
+      line-height: 25px
+      text-transform: uppercase
+      width: 100%
+      padding-bottom: 6px
+      border-bottom: 1px solid white
+      margin-bottom: 14px
+      margin-top: 40px
+    ul
+      @extend %clear-fix
+
+      li
+        float: left
+        margin-right: 5px
+        margin-bottom: 10px
+        &:nth-child(3n)
+          margin-right: 0
+      a
+        display: inline-block
+        width: 82px
+        height: 22px
+        border: 1px solid #eeeeee
+        background-color: #ffffff
+        color: #1f2b34
+        font-family: $open
+        font-size: 12px
+        font-weight: 400
+        line-height: 22px
+        text-align: center
+        transition: all 0.2s
+        &:hover
+          background-color: $grean
+          color: white
+          text-decoration: none
+
+  .subscribe
+    text-align: center
+    box-shadow: 5px 7px 27px rgba(0, 0, 0, 0.12)
+    background-color: #ffffff
+    padding: 36px 25px 28px
+    h4
+      color: #161d2b
+      font-family: $open
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+      margin-bottom: 16px
+
+    p
+      color: #3c4852
+      font-family: $open
+      font-size: 12px
+      font-weight: 300
+      line-height: 17px
+      margin-bottom: 26px
+    form
+      position: relative
+      width: 100%
+      border: 1px solid rgba(0, 0, 0, 0.07)
+      box-sizing: border-box
+      padding: 2px
+      input
+        width: 100%
+        border: 1px solid rgba(0, 0, 0, 0.07)
+        box-sizing: border-box
+        padding: 12px 35px 14px 15px
+        color: #424c55
+        font-family: $open
+        font-size: 12px
+        font-weight: 400
+      button
+        position: absolute
+        right: 13px
+        top: 16px

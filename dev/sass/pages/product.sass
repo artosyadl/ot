@@ -1,0 +1,105 @@
+// news__wrapper
+//-----------------------------------------------------------------------------------
+.product__wrapper
+  padding-top: 55px
+  padding-bottom: 60px
+  background-color: #f7f7f8
+
+  .title_page
+    margin-bottom: 30px
+
+  .sidebar__wrapper
+    position: relative
+    width: 100%
+    padding-right: 260px
+    min-height: 940px
+    @media (max-width: $screen-xs-max)
+      padding-right: 15px
+
+    .popular__tovar
+      position: absolute
+      right: 15px
+      top: 0
+      @media (max-width: $screen-xs-max)
+        position: static
+        display: none
+
+  .product__content
+    width: 100%
+    padding-top: 28px
+    @media (max-width: $screen-xs-max)
+      margin-bottom: 50px
+
+  .product__item
+    border: 1px solid #e5e5e5
+    border-bottom: none
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+    &.open
+      .arrow
+        fill: #cccccc
+        transform: rotate(180deg)
+        margin-top: -3px
+      .content
+        display: block
+
+    .title
+      border-bottom: 1px solid #e5e5e5
+      background-color: white
+      padding: 21.1px 40px
+      @extend %clear-fix
+      cursor: pointer
+      @media (max-width: $screen-xs-max)
+        padding: 20px
+    .price
+      color: #b7b7b7
+      font-family: $open
+      font-size: 10px
+      font-weight: 700
+      line-height: 13px
+      text-transform: uppercase
+      float: right
+      margin-right: 22px
+      margin-top: 3px
+      position: relative
+      z-index: 1
+      @media (max-width: $screen-xs-max)
+        float: left
+        display: block
+        width: 100%
+      &:hover
+        color: $grean
+        text-decoration: underline
+        cursor: pointer
+
+    .name
+      float: left
+      color: #333333
+      font-family: $open
+      font-size: 14px
+      font-weight: 700
+      text-transform: uppercase
+
+
+    .arrow
+      margin-top: 1px
+      float: right
+      cursor: pointer
+      fill: #6db23d
+
+    .content
+      padding: 20px 50px 40px 20px
+      color: #414040
+      font-family: Roboto
+      font-size: 14px
+      font-weight: 300
+      font-style: italic
+      line-height: 22px
+      border-bottom: 1px solid #e5e5e5
+      display: none
+
+      p
+        margin-bottom: 14px
+        &:last-child
+          margin-bottom: 0

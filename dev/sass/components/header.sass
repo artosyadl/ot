@@ -3,6 +3,7 @@
 .header
   padding-top: 10px
   background-color: white
+  border-bottom: 1px solid rgba(black, 0.07)
   .top-line
     position: relative
     padding-bottom: 9px
@@ -50,10 +51,12 @@
       line-height: 18px
       @media (max-width: $screen-sm-max)
         margin-top: -1px
+      @media (max-width: 480px)
+        display: none
       b
         text-transform: uppercase
-        font-size: 20px
-        font-weight: 600
+        font-size: 14px
+        font-weight: 800
         line-height: 20px
   .tell
     position: relative
@@ -183,5 +186,6 @@
 
   button
     position: absolute
-    top: 6px;    right: 7px
+    top: 6px
+    right: 7px
 
